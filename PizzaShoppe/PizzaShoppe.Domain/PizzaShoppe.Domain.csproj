@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -81,6 +83,36 @@
     <Compile Include="Abstract\ICrustRepository.cs" />
     <Compile Include="Abstract\ISpecialtyPizzaRepository.cs" />
     <Compile Include="Abstract\IToppingRepository.cs" />
+    <Compile Include="Concrete\Appetizer.cs">
+      <DependentUpon>PizzaDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\Beverage.cs">
+      <DependentUpon>PizzaDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\Crust.cs">
+      <DependentUpon>PizzaDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\PizzaDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\PizzaDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\PizzaDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\SpecialtyPizza.cs">
+      <DependentUpon>PizzaDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\Topping.cs">
+      <DependentUpon>PizzaDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Appetizer.cs" />
     <Compile Include="Entities\Beverage.cs" />
     <Compile Include="Entities\Crust.cs" />
@@ -91,11 +123,31 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Concrete\PizzaDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PizzaDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Concrete\PizzaDb.edmx.diagram">
+      <DependentUpon>PizzaDb.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Concrete\" />
+    <Content Include="Concrete\PizzaDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PizzaDb.edmx</DependentUpon>
+      <LastGenOutput>PizzaDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Concrete\PizzaDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PizzaDb.edmx</DependentUpon>
+      <LastGenOutput>PizzaDb.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

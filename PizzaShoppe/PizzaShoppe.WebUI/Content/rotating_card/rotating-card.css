@@ -180,8 +180,24 @@ body {
 	float: left;
 	width: 33.333333%;
 	text-align: center;
+    overflow: auto;
 }
 
+.card .stats-right {
+    display: block;
+    float: right;
+    width: 45%;
+    text-align: center;
+    overflow: auto;
+}
+
+.card .stats-left {
+    display: block;
+    float: left;
+    width: 45%;
+    text-align: center;
+    overflow: auto;
+}
 .card .stats:first-child{
 	border-right: 1px solid #EEEEEE;
 }

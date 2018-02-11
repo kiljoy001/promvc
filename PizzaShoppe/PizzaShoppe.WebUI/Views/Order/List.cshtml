@@ -1,5 +1,5 @@
 ﻿@using PizzaShoppe.Domain.Entities;
-@model PizzaShoppe.WebUI.HtmlHelper.OrderStruct
+@model PizzaShoppe.Domain;
 @{
     ViewBag.Title = "List";
 }
@@ -38,19 +38,44 @@
                                 <div class="content">
                                     <div class="main">
                                         <h4 class="text-center">Sizes</h4>
-                                        <p class="text-center">Our appetizers come in large or small</p>
-                                        <div class="stats-container">
-                                            <div class="stats">
-                                                <h4>@app.LargePrice.ToString("c")</h4>
-                                                <p>
-                                                    <a href="#">Click to Order Large @app.Name</a>
-                                                </p>
-                                                <h4>@app.SmallPrice.ToString("c")</h4>
-                                                <p>
-                                                    <a href="#">Click to Order Small @app.Name</a>
-                                                </p>
+                                        <p class="text-center">Our appetizers come in small or large</p>
+                                        @if (app.LargePrice == 0)
+                                        {
+                                            <text>
+                                            <div class="stats-container">
+                                                <div class="text-center">
+                                                    <h4>@app.SmallPrice.ToString("c")</h4>
+                                                    <a href="#">Click to order Small @app.Name</a>
+                                                </div>
                                             </div>
-                                        </div>
+                                            </text>
+                                        }
+                                        else if (app.SmallPrice == 0)
+                                        {
+                                            <text>
+                                            <div class="stats-container">
+                                                <div class="text-center">
+                                                    <h4>@app.LargePrice.ToString("c")</h4>
+                                                    <a href="#">Click to order Large @app.Name</a>
+                                                </div>
+                                            </div>
+                                            </text>
+                                        }
+                                        else
+                                        {
+                                            <text>
+                                            <div class="stats-container">
+                                                <div class="stats-right">
+                                                    <h4>Small</h4>
+                                                    <a href="#">@app.SmallPrice.ToString("c")</a>
+                                                </div>
+                                                <div class="stats-left">
+                                                    <h4>Large</h4>
+                                                    <a href="#">@app.LargePrice.ToString("c")</a>
+                                                </div>
+                                            </div>
+                                            </text>
+                                        }
                                     </div>
                                 </div>
                                 <div class="footer">
