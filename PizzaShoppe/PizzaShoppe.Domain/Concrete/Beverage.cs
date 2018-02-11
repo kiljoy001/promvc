@@ -16,7 +16,7 @@ namespace PizzaShoppe.Domain.Concrete
     {
         public int BevID { get; set; }
         public string Name { get; set; }
-        public Nullable<decimal> Price { get; set; }
+        public decimal Price { get; set; }
         public string Description { get; set; }
     }
 }

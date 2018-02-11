@@ -7,7 +7,7 @@ namespace UnitTests.App_Start
     using System.Web;
 
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-
+    using PizzaShoppe.Domain.Concrete;
     using Ninject;
     using Ninject.Web.Common;
 
@@ -42,7 +42,7 @@ namespace UnitTests.App_Start
             var kernel = new StandardKernel();
             kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
             kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-            
+            kernel.Bind<pizzaEntities>().ToSelf().InRequestScope();
             RegisterServices(kernel);
             return kernel;
         }

@@ -113,12 +113,6 @@
     <Compile Include="Concrete\Topping.cs">
       <DependentUpon>PizzaDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Appetizer.cs" />
-    <Compile Include="Entities\Beverage.cs" />
-    <Compile Include="Entities\Crust.cs" />
-    <Compile Include="Entities\CustomPizza.cs" />
-    <Compile Include="Entities\SpecialtyPizza.cs" />
-    <Compile Include="Entities\Topping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

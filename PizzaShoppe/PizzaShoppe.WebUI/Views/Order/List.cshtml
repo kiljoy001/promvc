@@ -1,5 +1,6 @@
-﻿@using PizzaShoppe.Domain.Entities;
-@model PizzaShoppe.Domain;
+﻿@using PizzaShoppe.Domain.Concrete;
+@model PizzaShoppe.WebUI.HtmlHelper.OrderStruct
+
 @{
     ViewBag.Title = "List";
 }
@@ -11,7 +12,7 @@
     <div class="container">
         <div class="col-sm-10 col-sm-offest-1">
             <br />
-            @foreach (var app in Model.Appetizers.AppetizersList)
+            @foreach (var app in Model.Appetizers)
             {
                 <div class="col-sm-4">
                     <div class="card-container">
@@ -87,7 +88,7 @@
             }
             <br />
             <br />
-            @foreach (var bev in Model.Beverages.BeveragesList)
+            @foreach (var bev in Model.Beverages)
             {
                 @*@<div class="col-sm-4">
                         <h3>@bev.Name</h3>
@@ -138,7 +139,7 @@
             }
             <br />
             <br />
-            @foreach (var crust in Model.Crusts.CrustsLists)
+            @foreach (var crust in Model.Crusts)
             {
                 @*<div class="col-sm-4">
                         <h3>@crust.Name</h3>
@@ -204,7 +205,7 @@
             }
             <br />
             <br />
-            @foreach (var pizza in Model.Special.PizzasLists)
+            @foreach (var pizza in Model.Special)
             {
                 <div class="col-sm-4">
                     <h3>@pizza.Name</h3>
@@ -216,7 +217,7 @@
             }
             <br />
             <br />
-            @foreach (var top in Model.Toppings.ToppingsLists)
+            @foreach (var top in Model.Toppings)
             {
                 <div class="col-sm-4">
                     <h3>

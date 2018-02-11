@@ -8,8 +8,7 @@
 //------------------------------------------------------------------------------
 
 namespace PizzaShoppe.Domain.Concrete
-{
-    using PizzaShoppe.Domain.Concrete;
+{ 
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
@@ -19,6 +18,7 @@ namespace PizzaShoppe.Domain.Concrete
         public pizzaEntities()
             : base("name=pizzaEntities")
         {
+            this.Database.Connection.ConnectionString = "Data Source=pizzashoppedb.database.windows.net;Initial Catalog=pizza;User ID=PizzaAdmin;Password=t9zHAo3RQ60TYuwGTJ6T";
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

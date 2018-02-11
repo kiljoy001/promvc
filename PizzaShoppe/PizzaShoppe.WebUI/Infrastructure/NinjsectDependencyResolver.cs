@@ -5,7 +5,6 @@ using System.Web.Mvc;
 using Ninject;
 using Moq;
 using PizzaShoppe.Domain.Abstract;
-using PizzaShoppe.Domain.Entities;
 using PizzaShoppe.Domain.Concrete;
 using System.Data.Entity;
 
@@ -76,12 +75,6 @@ namespace PizzaShoppe.WebUI.Infrastructure
             //kernel.Bind<ICrustRepository>().ToConstant(crusts.Object);
             //kernel.Bind<ISpecialtyPizzaRepository>().ToConstant(special.Object);
             //kernel.Bind<IToppingRepository>().ToConstant(top.Object);
-
-            kernel.Bind<DbContext>().To<pizzaEntities>();
-            //kernel.Bind<IBeverageRepository>().To<BevEFDbRepository>();
-            //kernel.Bind<ICrustRepository>().To<CrustEFDbRepository>();
-            //kernel.Bind<ISpecialtyPizzaRepository>().To<SPizzaEFDbRepository>();
-            //kernel.Bind<IToppingRepository>().To<ToppEFDbRepository>();
         }
     }
 }
