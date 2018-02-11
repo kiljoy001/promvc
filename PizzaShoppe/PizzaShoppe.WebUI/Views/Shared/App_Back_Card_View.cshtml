@@ -1,0 +1,40 @@
+﻿@model PizzaShoppe.Domain.Concrete.Appetizer
+
+            @if (Model.LargePrice == 0)
+            {
+                <text>
+                    <div class="stats-container">
+                        <div class="text-center">
+                            <h4>@Model.SmallPrice.ToString("C")</h4>
+                            <a href="#">Click to order Small @Model.Name</a>
+                        </div>
+                    </div>
+                </text>
+            }
+            else if (Model.SmallPrice == 0)
+            {
+                <text>
+                    <div class="stats-container">
+                        <div class="text-center">
+                            <h4>@Model.LargePrice.ToString("c")</h4>
+                            <a href="#">Click to order Large @Model.Name</a>
+                        </div>
+                    </div>
+                </text>
+            }
+            else
+            {
+                <text>
+                    <div class="stats-container">
+                        <div class="stats-right">
+                            <h4>Small</h4>
+                            <a href="#">@Model.SmallPrice.ToString("c")</a>
+                        </div>
+                        <div class="stats-left">
+                            <h4>Large</h4>
+                            <a href="#">@Model.LargePrice.ToString("c")</a>
+                        </div>
+                    </div>
+                </text>
+            }
+        

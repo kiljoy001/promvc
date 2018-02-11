@@ -121,6 +121,7 @@
     <Content Include="img\barbarian.jpg" />
     <Content Include="img\Basil Pasta.jpg" />
     <Content Include="img\Breadsticks.jpg" />
+    <Content Include="img\caesar_salad.jpg" />
     <Content Include="img\coca-cola-180898_640.jpg" />
     <Content Include="img\Cosmic_chicken_pizza.jpg" />
     <Content Include="img\dr_beverly.jpg" />
@@ -128,7 +129,9 @@
     <Content Include="img\fried_cauliflower.jpg" />
     <Content Include="img\House_salad.jpg" />
     <Content Include="img\Meatball_stromboli.jpg" />
+    <Content Include="img\Monkey Wings.JPG" />
     <Content Include="img\Nova_supreme.jpg" />
+    <Content Include="img\Onion_rings.jpg" />
     <Content Include="img\Pear_gargonzola.jpg" />
     <Content Include="img\pepperoni_perfection.jpg" />
     <Content Include="img\pizza-1452329_640.jpg" />
@@ -138,8 +141,10 @@
     <Content Include="img\renton_theatre.jpg" />
     <Content Include="img\scorpion-1772114_640.jpg" />
     <Content Include="img\screaming_monkey.jpg" />
+    <Content Include="img\smoking monkey logo edit.png" />
     <Content Include="img\Smoking monkey logo.png" />
     <Content Include="img\speck_o_roni.jpg" />
+    <Content Include="img\stuffed-crust.jpg" />
     <Content Include="img\wood-fired-oven-1230408_1920.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -170,6 +175,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\App_Back_Card_View.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
