@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web.Mvc;
 using Ninject;
 using Moq;
-using PizzaShoppe.Domain.Abstract;
 using PizzaShoppe.Domain.Concrete;
 using System.Data.Entity;
 

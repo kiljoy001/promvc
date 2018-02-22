@@ -12,13 +12,15 @@ namespace PizzaShoppe.Domain.Concrete
     using System;
     using System.Collections.Generic;
     
-    public partial class Crust
+    public partial class OrderDetail
     {
-        public int CrustID { get; set; }
-        public string Name { get; set; }
-        public decimal SmallPrice { get; set; }
-        public decimal MedPrice { get; set; }
-        public decimal LargePrice { get; set; }
-        public string Description { get; set; }
+        public Nullable<int> OrderID { get; set; }
+        public Nullable<int> ProductID { get; set; }
+        public decimal UnitPrice { get; set; }
+        public int Quantity { get; set; }
+        public Nullable<decimal> Discount { get; set; }
+    
+        public virtual MenuItem MenuItem { get; set; }
+        public virtual Order Order { get; set; }
     }
 }

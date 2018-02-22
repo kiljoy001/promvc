@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaShoppe.Domain.Abstract
+namespace PizzaShoppe.Domain.Entities
 {
-    public interface IAppetizerRepository
+    public class CartLine
     {
-        IEnumerable<Appetizer> AppetizersList { get; }
+        public MenuItem menuItem { get; set; }
+        public int Quantity { get; set; }
     }
 }

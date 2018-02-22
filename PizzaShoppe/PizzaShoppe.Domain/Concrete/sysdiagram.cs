@@ -12,12 +12,12 @@ namespace PizzaShoppe.Domain.Concrete
     using System;
     using System.Collections.Generic;
     
-    public partial class Appetizer
+    public partial class sysdiagram
     {
-        public int AppID { get; set; }
-        public string Name { get; set; }
-        public decimal SmallPrice { get; set; }
-        public decimal LargePrice { get; set; }
-        public string Description { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 namespace PizzaShoppe.Domain.Concrete
-{ 
+{
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
@@ -26,10 +26,10 @@ namespace PizzaShoppe.Domain.Concrete
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Appetizer> Appetizers { get; set; }
-        public virtual DbSet<Beverage> Beverages { get; set; }
-        public virtual DbSet<PizzaShoppe.Domain.Concrete.Crust> Crusts { get; set; }
-        public virtual DbSet<SpecialtyPizza> SpecialtyPizzas { get; set; }
-        public virtual DbSet<Topping> Toppings { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<MenuItem> MenuItems { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

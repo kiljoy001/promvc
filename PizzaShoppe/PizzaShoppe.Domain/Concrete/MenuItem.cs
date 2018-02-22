@@ -12,12 +12,21 @@ namespace PizzaShoppe.Domain.Concrete
     using System;
     using System.Collections.Generic;
     
-    public partial class Topping
+    public partial class MenuItem
     {
-        public int ToppingID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public MenuItem()
+        {
+            this.OrderDetails = new HashSet<OrderDetail>();
+        }
+    
+        public int ProductID { get; set; }
         public string Name { get; set; }
+        public string Category { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
-        public string ToppingType { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

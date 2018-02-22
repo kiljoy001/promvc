@@ -4,12 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="044d12b312e044758c08ee197415ff20" Name="Diagram1">
-        <EntityTypeShape EntityType="pizzaModel.Appetizer" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pizzaModel.Beverage" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pizzaModel.Crust" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pizzaModel.SpecialtyPizza" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pizzaModel.Topping" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="b225aa2c33c34fb9bc751879e65197a5" Name="Diagram1">
+        <EntityTypeShape EntityType="pizzaModel.Customer" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="pizzaModel.MenuItem" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pizzaModel.Order" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pizzaModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="pizzaModel.OrderDetail" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="pizzaModel.FK__Orders__Customer__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzaModel.FK__OrderDeta__Produ__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="pizzaModel.FK__OrderDeta__Order__76969D2E" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

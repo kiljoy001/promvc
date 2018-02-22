@@ -48,28 +48,22 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -78,68 +72,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IAppetizerRepository.cs" />
-    <Compile Include="Abstract\IBeverageRepository.cs" />
-    <Compile Include="Abstract\ICrustRepository.cs" />
-    <Compile Include="Abstract\ISpecialtyPizzaRepository.cs" />
-    <Compile Include="Abstract\IToppingRepository.cs" />
-    <Compile Include="Concrete\Appetizer.cs">
-      <DependentUpon>PizzaDb.tt</DependentUpon>
+    <Compile Include="Abstract\ICart.cs" />
+    <Compile Include="Concrete\Customer.cs">
+      <DependentUpon>PizzaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\Beverage.cs">
-      <DependentUpon>PizzaDb.tt</DependentUpon>
+    <Compile Include="Concrete\MenuItem.cs">
+      <DependentUpon>PizzaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\Crust.cs">
-      <DependentUpon>PizzaDb.tt</DependentUpon>
+    <Compile Include="Concrete\Order.cs">
+      <DependentUpon>PizzaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\PizzaDb.Context.cs">
+    <Compile Include="Concrete\OrderDetail.cs">
+      <DependentUpon>PizzaDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concrete\PizzaDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaDb.Context.tt</DependentUpon>
+      <DependentUpon>PizzaDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\PizzaDb.cs">
+    <Compile Include="Concrete\PizzaDB.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaDb.tt</DependentUpon>
+      <DependentUpon>PizzaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\PizzaDb.Designer.cs">
+    <Compile Include="Concrete\PizzaDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaDb.edmx</DependentUpon>
+      <DependentUpon>PizzaDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\SpecialtyPizza.cs">
-      <DependentUpon>PizzaDb.tt</DependentUpon>
+    <Compile Include="Concrete\sysdiagram.cs">
+      <DependentUpon>PizzaDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\Topping.cs">
-      <DependentUpon>PizzaDb.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Entities\Cart.cs" />
+    <Compile Include="Entities\CartLine.cs" />
+    <Compile Include="Entities\CustomPizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Concrete\PizzaDb.edmx">
+    <EntityDeploy Include="Concrete\PizzaDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PizzaDb.Designer.cs</LastGenOutput>
+      <LastGenOutput>PizzaDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Concrete\PizzaDb.edmx.diagram">
-      <DependentUpon>PizzaDb.edmx</DependentUpon>
+    <None Include="Concrete\PizzaDB.edmx.diagram">
+      <DependentUpon>PizzaDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Concrete\PizzaDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PizzaDb.edmx</DependentUpon>
-      <LastGenOutput>PizzaDb.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Concrete\PizzaDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PizzaDb.edmx</DependentUpon>
-      <LastGenOutput>PizzaDb.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Concrete\PizzaDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PizzaDB.edmx</DependentUpon>
+      <LastGenOutput>PizzaDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Concrete\PizzaDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PizzaDB.edmx</DependentUpon>
+      <LastGenOutput>PizzaDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
