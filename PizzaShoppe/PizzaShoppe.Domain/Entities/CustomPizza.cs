@@ -30,8 +30,8 @@ namespace PizzaShoppe.Domain.Entities
 
         public void AddItem(MenuItem item, int quantity)
         {
-            //Ensure that only items with the Toppings property can be added
-            if(item.Category == "Topping")
+            //Ensure that only items with the Toppings or curst property can be added
+            if(item.Category == "Topping" || item.Category == "Crust" && CrustType == null)
             {
                 CartLine line = SelectedToppings.Where(i => i.menuItem.ProductID == item.ProductID).FirstOrDefault();
                 if (line == null)

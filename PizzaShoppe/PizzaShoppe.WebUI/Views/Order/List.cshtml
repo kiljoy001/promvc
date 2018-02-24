@@ -1,5 +1,5 @@
-﻿
-@model PizzaShoppe.Domain.Concrete.pizzaEntities
+﻿@using PizzaShoppe.Domain.Concrete;
+@model LinkedList<MenuItem>
 
 @{
     ViewBag.Title = "List";
@@ -15,14 +15,20 @@
     <div class="container">
         <div class="col-sm-10 col-sm-offest-1">
             <br />
-            @foreach (var app in Model.MenuItems.ToList())
+            @foreach (var node in Model)
             {
+                if (node.Category == "Crust" || node.Category == "Topping")
+                {
+                    continue;
+                }
+                else
+                {
                 <div class="col-sm-4">
                     <div class="card-container">
                         <div class="card">
-                            @switch (app.Name)
-                                {
-                                    case "Monkey Wings":
+                            @switch (node.Name)
+                            {
+                                case string a when a.Contains("Monkey Wings"):
                                         <text>
                             <div class="front">
                                 <div class="cover">
@@ -30,9 +36,9 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">@app.Name</h3>
+                                        <h3 class="name">@node.Name</h3>
                                         <p class="profession">Giant 2 Jointed</p>
-                                        <p class="text-center">@app.Description</p>
+                                        <p class="text-center">@node.Description</p>
                                     </div>
                                     <div class="footer">
                                         <i class="fa fa-mail-forward"></i> Flip to see prices!
@@ -40,8 +46,8 @@
                                 </div>
                             </div>
                                         </text>
-        break;
-    case "Crispy Cauliflower":
+                                    break;
+                                case string b when b.Contains("Crispy Cauliflower"):
                         <text>
                             <div class="front">
                                 <div class="cover">
@@ -49,9 +55,9 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">@app.Name</h3>
+                                        <h3 class="name">@node.Name</h3>
                                         <p class="profession">Half orders avaliable</p>
-                                        <p class="text-center">@app.Description</p>
+                                        <p class="text-center">@node.Description</p>
                                     </div>
                                     <div class="footer">
                                         <i class="fa fa-mail-forward"></i> Flip to see prices!
@@ -59,8 +65,8 @@
                                 </div>
                             </div>
                         </text>
-        break;
-    case "Onion Rings":
+                                    break;
+                                case string c when c.Contains("Onion Rings"):
                         <text>
                             <div class="front">
                                 <div class="cover">
@@ -68,9 +74,9 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">@app.Name</h3>
+                                        <h3 class="name">@node.Name</h3>
                                         <p class="profession">Half orders avaliable</p>
-                                        <p class="text-center">@app.Description</p>
+                                        <p class="text-center">@node.Description</p>
                                     </div>
                                     <div class="footer">
                                         <i class="fa fa-mail-forward"></i> Flip to see prices!
@@ -78,8 +84,8 @@
                                 </div>
                             </div>
                         </text>
-        break;
-    case "Garlic Provolone Breadsticks":
+                                    break;
+                                case string d when d.Contains("Garlic Provolone Breadsticks"):
                         <text>
                             <div class="front">
                                 <div class="cover">
@@ -87,9 +93,9 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">@app.Name</h3>
+                                        <h3 class="name">@node.Name</h3>
                                         <p class="profession">Deliciously Cheesy</p>
-                                        <p class="text-center">@app.Description</p>
+                                        <p class="text-center">@node.Description</p>
                                     </div>
                                     <div class="footer">
                                         <i class="fa fa-mail-forward"></i> Flip to see prices!
@@ -97,8 +103,8 @@
                                 </div>
                             </div>
                         </text>
-        break;
-    case "Cyclops 2.0":
+                                    break;
+                                case string d when d.Contains("Cyclops 2.0"):
                         <text>
                             <div class="front">
                                 <div class="cover">
@@ -106,9 +112,9 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">@app.Name</h3>
+                                        <h3 class="name">@node.Name</h3>
                                         <p class="profession">A new take on the classic</p>
-                                        <p class="text-center">@app.Description</p>
+                                        <p class="text-center">@node.Description</p>
                                     </div>
                                     <div class="footer">
                                         <i class="fa fa-mail-forward"></i> Flip to see prices!
@@ -119,8 +125,8 @@
                                 </div>
                             </div>
                         </text>
-        break;
-    case "Caesar Salad":
+                                    break;
+                                case string e when e.Contains("Caesar Salad"):
                         <text>
                             <div class="front">
                                 <div class="cover">
@@ -128,9 +134,9 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">@app.Name</h3>
+                                        <h3 class="name">@node.Name</h3>
                                         <p class="profession">The salad you deserve</p>
-                                        <p class="text-center">@app.Description</p>
+                                        <p class="text-center">@node.Description</p>
                                     </div>
                                     <div class="footer">
                                         <i class="fa fa-mail-forward"></i> Flip to see prices!
@@ -138,6 +144,44 @@
                                 </div>
                             </div>
                         </text>
+                                    break;
+                                case string f when f.Contains("Soda"):
+                                    <text>
+                                        <div class="front">
+                                            <div class="cover">
+                                                <img src="~/img/coca-cola-180898_640.jpg" />
+                                            </div>
+                                            <div class="content">
+                                                <div class="main">
+                                                    <h3 class="name">@node.Name</h3>
+                                                    <p class="profession">Soda, pop, fizzy, whatever you call it, we've got something that will tickle your fancy.</p>
+                                                    <p class="text-center">@node.Description</p>
+                                                </div>
+                                                <div class="footer">
+                                                    <i class="fa fa-mail-forward"></i> Flip to see prices!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </text>
+                                    break;
+                                case string  g when g.Contains("Drink"):
+                                    <text>
+                                        <div class="front">
+                                            <div class="cover">
+                                                <img src="~/img/coca-cola-180898_640.jpg" />
+                                            </div>
+                                            <div class="content">
+                                                <div class="main">
+                                                    <h3 class="name">@node.Name</h3>
+                                                    <p class="profession">Soda, pop, fizzy, whatever you call it, we've got something that will tickle your fancy.</p>
+                                                    <p class="text-center">@node.Description</p>
+                                                </div>
+                                                <div class="footer">
+                                                    <i class="fa fa-mail-forward"></i> Flip to see prices!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </text>
         break;
     default:
                         <text>
@@ -147,8 +191,8 @@
                                 </div>
                                 <div class="content">
                                     <div class="main">
-                                        <h3 class="name">@app.Name</h3>
-                                        <p class="text-center">@app.Description</p>
+                                        <h3 class="name">@node.Name</h3>
+                                        <p class="text-center">@node.Description</p>
                                     </div>
                                     <div class="footer">
                                         <i class="fa fa-mail-forward"></i> Flip to see prices!
@@ -156,53 +200,24 @@
                                 </div>
                             </div>
                         </text>
-        break;
-}
+                                    break;
+                            }
                         <div class="back">
                             <div class="header">
                                 <h5 class="motto">Made fresh to Order!</h5>
                             </div>
                             <div class="content">
                                 <div class="main">
-                                    <h4 class="text-center">Sizes</h4>
-                                    <p class="text-center">Our appetizers come in small or large</p>
-                                    @if (app.Price == 0)
-                                    {
+                                    <h4 class="text-center">La pizza è vita</h4>
+                                    <p class="text-center">The best pizza in Renton!</p>
                                         <text>
                                             <div class="stats-container">
                                                 <div class="text-center">
-                                                    <h4>@app.Price.ToString("c")</h4>
-                                                    <a href="#">Click to order Small @app.Name</a>
+                                                    <h4>@node.Price.ToString("c")</h4>
+                                                    <a href="#">Click to order @node.Name</a>
                                                 </div>
                                             </div>
                                         </text>
-                                    }
-                                    else if (app.Price == 0)
-                                    {
-                                        <text>
-                                            <div class="stats-container">
-                                                <div class="text-center">
-                                                    <h4>@app.Price.ToString("c")</h4>
-                                                    <a href="#">Click to order Large @app.Name</a>
-                                                </div>
-                                            </div>
-                                        </text>
-                                    }
-                                    else
-                                    {
-                                        <text>
-                                            <div class="stats-container">
-                                                <div class="stats-right">
-                                                    <h4>Small</h4>
-                                                    <a href="#">@app.Price.ToString("c")</a>
-                                                </div>
-                                                <div class="stats-left">
-                                                    <h4>Large</h4>
-                                                    <a href="#">@app.Price.ToString("c")</a>
-                                                </div>
-                                            </div>
-                                        </text>
-                                    }
                                 </div>
                             </div>
                             <div class="footer">
@@ -211,7 +226,8 @@
                         </div> <!-- end card -->
                         </div>
                     </div>
-                    }
+                }
+            }
                 </div>
         </div>
 </div>
