@@ -120,6 +120,40 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\get_shit_done\assets\css\demo.css" />
+    <Content Include="Content\get_shit_done\assets\css\gsdk.css" />
+    <Content Include="Content\get_shit_done\assets\img\apple-icon.png" />
+    <Content Include="Content\get_shit_done\assets\img\bg.jpg" />
+    <Content Include="Content\get_shit_done\assets\img\blurred-black-cover.jpeg" />
+    <Content Include="Content\get_shit_done\assets\img\carousel_blue.png" />
+    <Content Include="Content\get_shit_done\assets\img\carousel_green.png" />
+    <Content Include="Content\get_shit_done\assets\img\carousel_orange.png" />
+    <Content Include="Content\get_shit_done\assets\img\carousel_red.png" />
+    <Content Include="Content\get_shit_done\assets\img\cover_4.jpg" />
+    <Content Include="Content\get_shit_done\assets\img\cover_4_blur.jpg" />
+    <Content Include="Content\get_shit_done\assets\img\dulau.jpg" />
+    <Content Include="Content\get_shit_done\assets\img\favicon.png" />
+    <Content Include="Content\get_shit_done\assets\img\mask.png" />
+    <Content Include="Content\get_shit_done\assets\img\mockup.png" />
+    <Content Include="Content\get_shit_done\assets\img\new_logo.png" />
+    <Content Include="Content\get_shit_done\assets\img\tim_80x80.png" />
+    <Content Include="Content\get_shit_done\assets\js\custom.js" />
+    <Content Include="Content\get_shit_done\assets\js\get-shit-done.js" />
+    <Content Include="Content\get_shit_done\assets\js\gsdk-bootstrapswitch.js" />
+    <Content Include="Content\get_shit_done\assets\js\gsdk-checkbox.js" />
+    <Content Include="Content\get_shit_done\assets\js\gsdk-radio.js" />
+    <Content Include="Content\get_shit_done\assets\js\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="Content\get_shit_done\bootstrap3\css\bootstrap-theme.css" />
+    <Content Include="Content\get_shit_done\bootstrap3\css\bootstrap-theme.min.css" />
+    <Content Include="Content\get_shit_done\bootstrap3\css\bootstrap.css" />
+    <Content Include="Content\get_shit_done\bootstrap3\css\bootstrap.min.css" />
+    <Content Include="Content\get_shit_done\bootstrap3\css\font-awesome.css" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\get_shit_done\bootstrap3\js\bootstrap.js" />
+    <Content Include="Content\get_shit_done\bootstrap3\js\bootstrap.min.js" />
+    <Content Include="Content\get_shit_done\jquery\jquery-1.10.2.js" />
+    <Content Include="Content\get_shit_done\jquery\jquery-ui.custom.min.js" />
     <Content Include="Content\rotating_card\bootstrap.css" />
     <Content Include="Content\rotating_card\rotating-card.css" />
     <Content Include="Content\Site.css" />
@@ -136,6 +170,7 @@
     <Content Include="img\Fettuccini_alfredo.jpg" />
     <Content Include="img\fried_cauliflower.jpg" />
     <Content Include="img\House_salad.jpg" />
+    <Content Include="img\Margherita-Pizza.jpg" />
     <Content Include="img\Meatball_stromboli.jpg" />
     <Content Include="img\Monkey Wings.JPG" />
     <Content Include="img\Nova_supreme.jpg" />
@@ -156,6 +191,52 @@
     <Content Include="img\wood-fired-oven-1230408_1920.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\get_shit_done\assets\.DS_Store" />
+    <Content Include="Content\get_shit_done\assets\css\.DS_Store" />
+    <Content Include="Content\get_shit_done\assets\img\.DS_Store" />
+    <Content Include="Content\get_shit_done\assets\js\.DS_Store" />
+    <Content Include="Content\get_shit_done\assets\js\presentation-page\.DS_Store" />
+    <Content Include="Content\get_shit_done\assets\sass\.DS_Store" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\.DS_Store" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\mixins\.DS_Store" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\mixins\_buttons.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\mixins\_inputs.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\mixins\_labels.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\mixins\_navbars.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\mixins\_tabs.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\mixins\_transparency.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_alerts.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_buttons.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_carousel.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_checkbox-radio-switch.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_collapse.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_dropdown.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_inputs.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_labels-and-progress-bars.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_misc.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_mixins.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_modal.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_navbars.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_responsive.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_sliders.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_tabs-navs-pagination.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_tooltips.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_typography.scss" />
+    <Content Include="Content\get_shit_done\assets\sass\gsdk\_variables.scss" />
+    <Content Include="Content\get_shit_done\bootstrap3\.DS_Store" />
+    <Content Include="Content\get_shit_done\bootstrap3\css\.DS_Store" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\.DS_Store" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\FontAwesome.otf" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\get_shit_done\bootstrap3\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\get_shit_done\bootstrap3\js\.DS_Store" />
+    <Content Include="Content\get_shit_done\jquery\.DS_Store" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -165,11 +246,14 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjsectDependencyResolver.cs" />
+    <Compile Include="Models\CartIndexViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +266,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Cart\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,7 +277,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="HtmlHelper\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Index\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PizzaShoppe.Domain\PizzaShoppe.Domain.csproj">

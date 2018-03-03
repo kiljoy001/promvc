@@ -1,5 +1,8 @@
 ﻿@using PizzaShoppe.Domain.Concrete;
-@model LinkedList<MenuItem>
+@using System.Web.Mvc;
+@using System.Data.Entity;
+
+@model List<MenuItem>
 
 @{
     ViewBag.Title = "List";
@@ -164,11 +167,106 @@
                                         </div>
                                     </text>
                                     break;
-                                case string  g when g.Contains("Drink"):
+                                case string  g when g.Contains("Margherita"):
+                                    <text>
+                                        <div class="front">
+                                            <div class="cover">
+                                                <img src="~/img/Margherita-Pizza.jpg" />
+                                            </div>
+                                            <div class="content">
+                                                <div class="main">
+                                                    <h3 class="name">@node.Name</h3>
+                                                    <p class="profession">Soda, pop, fizzy, whatever you call it, we've got something that will tickle your fancy.</p>
+                                                    <p class="text-center">@node.Description</p>
+                                                </div>
+                                                <div class="footer">
+                                                    <i class="fa fa-mail-forward"></i> Flip to see prices!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </text>
+                                    break;
+                                case string h when h.Contains("Margherita"):
+                                    <text>
+                                        <div class="front">
+                                            <div class="cover">
+                                                <img src="~/img/Margherita-Pizza.jpg" />
+                                            </div>
+                                            <div class="content">
+                                                <div class="main">
+                                                    <h3 class="name">@node.Name</h3>
+                                                    <p class="profession">Soda, pop, fizzy, whatever you call it, we've got something that will tickle your fancy.</p>
+                                                    <p class="text-center">@node.Description</p>
+                                                </div>
+                                                <div class="footer">
+                                                    <i class="fa fa-mail-forward"></i> Flip to see prices!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </text>
+        break;
+    case string i when i.Contains("Drink"):
                                     <text>
                                         <div class="front">
                                             <div class="cover">
                                                 <img src="~/img/coca-cola-180898_640.jpg" />
+                                            </div>
+                                            <div class="content">
+                                                <div class="main">
+                                                    <h3 class="name">@node.Name</h3>
+                                                    <p class="profession">Soda, pop, fizzy, whatever you call it, we've got something that will tickle your fancy.</p>
+                                                    <p class="text-center">@node.Description</p>
+                                                </div>
+                                                <div class="footer">
+                                                    <i class="fa fa-mail-forward"></i> Flip to see prices!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </text>
+                                    break;
+                                case string j when j.Contains("Quattro Stagioni"):
+                                    <text>
+                                        <div class="front">
+                                            <div class="cover">
+                                                <img src="~/img/pizza-329523_640.jpg" />
+                                            </div>
+                                            <div class="content">
+                                                <div class="main">
+                                                    <h3 class="name">@node.Name</h3>
+                                                    <p class="profession">Soda, pop, fizzy, whatever you call it, we've got something that will tickle your fancy.</p>
+                                                    <p class="text-center">@node.Description</p>
+                                                </div>
+                                                <div class="footer">
+                                                    <i class="fa fa-mail-forward"></i> Flip to see prices!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </text>
+                                    break;
+                                case string k when k.Contains("Quattro Stagioni"):
+                                    <text>
+                                        <div class="front">
+                                            <div class="cover">
+                                                <img src="~/img/pizza-329523_640.jpg" />
+                                            </div>
+                                            <div class="content">
+                                                <div class="main">
+                                                    <h3 class="name">@node.Name</h3>
+                                                    <p class="profession">Soda, pop, fizzy, whatever you call it, we've got something that will tickle your fancy.</p>
+                                                    <p class="text-center">@node.Description</p>
+                                                </div>
+                                                <div class="footer">
+                                                    <i class="fa fa-mail-forward"></i> Flip to see prices!
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </text>
+                                    break;
+                                case string l when l.Contains("Roma Bianca"):
+                                    <text>
+                                        <div class="front">
+                                            <div class="cover">
+                                                <img src="~/img/speck_o_roni.jpg" />
                                             </div>
                                             <div class="content">
                                                 <div class="main">
@@ -214,7 +312,17 @@
                                             <div class="stats-container">
                                                 <div class="text-center">
                                                     <h4>@node.Price.ToString("c")</h4>
-                                                    <a href="#">Click to order @node.Name</a>
+                                                    @using (Html.BeginForm("AddToCart", "Cart"))
+                                                    {
+                                                        //Because we are using a list to provide data to the view,  the below cycles through the list and then gets the productid for each item.
+                                                        for(int i=0; i < Model.Count(); i++)
+                                                        {
+                                                            @Html.HiddenFor(x => x.ElementAt(i).ProductID )
+                                                        }
+                                                        
+                                                        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                                                        <input type="submit" class="btn" value="Add to cart" />
+                                                    }
                                                 </div>
                                             </div>
                                         </text>
