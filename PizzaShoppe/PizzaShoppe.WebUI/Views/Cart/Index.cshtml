@@ -1,7 +1,38 @@
-﻿
+﻿@using PizzaShoppe.WebUI.Models
+@model CartIndexViewModel
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<link href="~/Content/rotating_card/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/rotating_card/rotating-card.css" rel="stylesheet" />
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+<body>
+    <div class="card">
+                <div>
+                    <div>
+                        <table>
+                            <tr>
+                                <th>
+                                    Selected Items
+                                </th>
+                                <th>
+                                    Subtotal
+                                </th>
+                            </tr>
+                            <tr>
+                                @foreach (var cart in Model.Cart.Lines)
+                                {
+                                    <td>
+                                        @cart.menuItem.Name
+                                    </td>
+                                    <td>
+                                        @cart.Quantity
+                                    </td>
+                                }
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                </div>
+</body>
