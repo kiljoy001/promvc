@@ -8,31 +8,20 @@
 <link href="~/Content/rotating_card/rotating-card.css" rel="stylesheet" />
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 <body>
-    <div class="card">
-                <div>
-                    <div>
-                        <table>
-                            <tr>
-                                <th>
-                                    Selected Items
-                                </th>
-                                <th>
-                                    Subtotal
-                                </th>
-                            </tr>
-                            <tr>
-                                @foreach (var cart in Model.Cart.Lines)
-                                {
-                                    <td>
-                                        @cart.menuItem.Name
-                                    </td>
-                                    <td>
-                                        @cart.Quantity
-                                    </td>
-                                }
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                </div>
+    <br />
+
+    <div class="card" style="width: 114rem;">
+        <div class="card-block">
+            <p class="card-text">Ordered Items:</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            @foreach (var cart in Model.Cart.Lines)
+            {
+                <li class="list-group-item" style="text-align: left;">@cart.menuItem.Name<span style="float: right;">@cart.Quantity | @cart.menuItem.Price.ToString("c")</span></li>
+            }
+        </ul>
+        <div class="card-block">
+            <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a>
+         </div>
+    </div>
 </body>

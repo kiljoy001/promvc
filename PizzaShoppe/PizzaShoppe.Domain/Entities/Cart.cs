@@ -16,7 +16,7 @@ namespace PizzaShoppe.Domain.Entities
         public void AddItem(MenuItem item, int quantity)
         {
             CartLine line = lineCollection.Where(i => i.menuItem.ProductID == item.ProductID).FirstOrDefault();
-            if(line == null)
+            if(!lineCollection.Contains(line))
             {
                 lineCollection.Add(new CartLine { menuItem = item, Quantity = quantity });
             }
