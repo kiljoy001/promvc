@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace PizzaShoppe.WebUI.Controllers
 {
-    public class IndexController : Controller
+    public class CPizzaController : Controller
     {
         // GET: Index
-        public ActionResult Index()
+        public ActionResult COrder()
         {
             return View();
         }
