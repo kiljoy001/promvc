@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
 using PizzaShoppe.Domain.Concrete;
-
+using PizzaShoppe.WebUI.Models;
 
 namespace PizzaShoppe.WebUI.Controllers
 {
@@ -25,7 +25,8 @@ namespace PizzaShoppe.WebUI.Controllers
             {
                 MList.Add(item);
             }
-            return View(MList);
+            MenuItemListViewModel model = new MenuItemListViewModel(MList);
+            return View(model);
         }
     }
 }

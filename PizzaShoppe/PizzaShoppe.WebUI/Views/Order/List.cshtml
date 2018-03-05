@@ -1,8 +1,7 @@
 ﻿@using PizzaShoppe.Domain.Concrete;
-@using System.Web.Mvc;
-@using System.Data.Entity;
+@using PizzaShoppe.WebUI.Models;
 
-@model List<MenuItem>
+@model MenuItemListViewModel
 
 @{
     ViewBag.Title = "List";
@@ -18,8 +17,9 @@
     <div class="container">
         <div class="col-sm-10 col-sm-offest-1">
             <br />
-            @foreach (var node in Model)
+            @foreach (var node in Model.MenuList)
             {
+                Model.CurrentItem = node;
                 if (node.Category == "Crust" || node.Category == "Topping")
                 {
                     continue;
@@ -30,7 +30,7 @@
                     <div class="card-container">
                         <div class="card">
                             @switch (node.Name)
-                            {
+                    {
                                 case string a when a.Contains("Monkey Wings"):
                                         <text>
                             <div class="front">
@@ -315,11 +315,7 @@
                                                     @using (Html.BeginForm("AddToCart", "Cart"))
                                                     {
                                                         //Because we are using a list to provide data to the view,  the below cycles through the list and then gets the productid for each item.
-                                                        for(int i=0; i < Model.Count(); i++)
-                                                        {
-                                                            @Html.HiddenFor(x => x.ElementAt(i).ProductID )
-                                                        }
-                                                        
+                                                        @Html.Hidden("productId", Model.CurrentItem.ProductID)
                                                         @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
                                                         <input type="submit" class="btn btn-default" value="Add to cart" />
                                                     }

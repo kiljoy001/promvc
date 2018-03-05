@@ -290,6 +290,8 @@
     </Compile>
     <Compile Include="Infrastructure\NinjsectDependencyResolver.cs" />
     <Compile Include="Models\CartIndexViewModel.cs" />
+    <Compile Include="Models\ExtensionMethod_HiddenForCollection.cs" />
+    <Compile Include="Models\MenuItemListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
