@@ -12,16 +12,22 @@
 
     <div class="card" style="width: 114rem;">
         <div class="card-block">
-            <p class="card-text">Ordered Items:</p>
+            <h1><small class="subtitle">Ordered Items:</small></h1>
         </div>
-        <ul class="list-group list-group-flush">
+        <ul style="list-style-type: none;">
             @foreach (var cart in Model.Cart.Lines)
             {
-                <li class="list-group-item" style="text-align: left;">@cart.menuItem.Name<span style="float: right;">@cart.Quantity | @cart.menuItem.Price.ToString("c")</span></li>
+                <li class="list-group-item" style="text-align: left;">@cart.menuItem.Name X @cart.Quantity<span style="float: right;">@cart.SubTotal.ToString("c")</span></li>
             }
+            <li></li>
         </ul>
+
         <div class="card-block">
-            <button class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</button>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a class="btn btn-primary" href="@Model.ReturnUrl">Continue Shopping</a><span style="float:right">Total: @Model.Cart.ComputeTotalValue().ToString("c")</span>
+                </li>
+            </ul>
          </div>
     </div>
 </body>

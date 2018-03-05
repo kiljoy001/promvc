@@ -11,5 +11,6 @@ namespace PizzaShoppe.Domain.Entities
     {
         public MenuItem menuItem { get; set; }
         public int Quantity { get; set; }
+        public decimal SubTotal { get { return menuItem.Price * Quantity; } }
     }
 }
