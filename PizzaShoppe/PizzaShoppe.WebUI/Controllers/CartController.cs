@@ -29,7 +29,7 @@ namespace PizzaShoppe.WebUI.Controllers
         }
         public RedirectToRouteResult AddToCart(int productId, string returnUrl)
         {
-            MenuItem item = Context.MenuItems.FirstOrDefault(i => i.ProductID == productId);
+            Domain.Concrete.MenuItem item = Context.MenuItems.FirstOrDefault(i => i.ProductID == productId);
             if (item != null)
             {
                 GetCart().AddItem(item, 1);
@@ -39,7 +39,7 @@ namespace PizzaShoppe.WebUI.Controllers
         
         public RedirectToRouteResult RemoveFromCart(int productid, string returnUrl)
         {
-            MenuItem item = Context.MenuItems.FirstOrDefault(i => i.ProductID == productid);
+            Domain.Concrete.MenuItem item = Context.MenuItems.FirstOrDefault(i => i.ProductID == productid);
             if(item != null)
             {
                 GetCart().RemoveLine(item);

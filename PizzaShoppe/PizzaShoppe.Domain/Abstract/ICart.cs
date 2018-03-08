@@ -10,8 +10,8 @@ namespace PizzaShoppe.Domain.Abstract
 {
     public interface ICart
     {
-        void AddItem(MenuItem item, int quantity);
-        void RemoveLine(MenuItem item);
+        void AddItem(Concrete.MenuItem item, int quantity);
+        void RemoveLine(Concrete.MenuItem item);
         decimal ComputeTotalValue();
         void Clear();
         IEnumerable<CartLine> Lines { get; }

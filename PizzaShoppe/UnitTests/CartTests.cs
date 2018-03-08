@@ -9,32 +9,32 @@ namespace UnitTests
     [TestClass]
     public class CartTests
     {
-        private Tuple<MenuItem[], Cart> Setup_test()
+        private Tuple<PizzaShoppe.Domain.Concrete.MenuItem[], Cart> Setup_test()
         {
-            MenuItem[] fakeitems = new MenuItem[]
+            PizzaShoppe.Domain.Concrete.MenuItem[] fakeitems = new PizzaShoppe.Domain.Concrete.MenuItem[]
             {
-                new MenuItem { ProductID = 1, Name = "M1", Price = 14M },
-                new MenuItem { ProductID = 2, Name = "M2", Price = 1.25M },
-                new MenuItem { ProductID = 3, Name = "M3", Price = 3M }
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 1, Name = "M1", Price = 14M },
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 2, Name = "M2", Price = 1.25M },
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 3, Name = "M3", Price = 3M }
             };
             
             Cart target = new Cart();
-            var value_store = new Tuple<MenuItem[], Cart>(fakeitems, target);
+            var value_store = new Tuple<PizzaShoppe.Domain.Concrete.MenuItem[], Cart>(fakeitems, target);
             return value_store;
         }
 
-        private Tuple<MenuItem[], CustomPizza> Setup_Pizza_Test()
+        private Tuple<PizzaShoppe.Domain.Concrete.MenuItem[], CustomPizza> Setup_Pizza_Test()
         {
-            MenuItem[] fakeitems = new MenuItem[]
+            PizzaShoppe.Domain.Concrete.MenuItem[] fakeitems = new PizzaShoppe.Domain.Concrete.MenuItem[]
             {
-                new MenuItem { ProductID = 1, Name = "C1", Price = 14M, Category = "Crust" },
-                new MenuItem { ProductID = 2, Name = "T1", Price = 1.25M, Category ="Topping" },
-                new MenuItem { ProductID = 3, Name = "T2", Price = 3M, Category ="Topping" },
-                new MenuItem { ProductID = 4, Name = "T3", Price = 1.5M, Category ="Topping" }
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 1, Name = "C1", Price = 14M, Category = "Crust" },
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 2, Name = "T1", Price = 1.25M, Category ="Topping" },
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 3, Name = "T2", Price = 3M, Category ="Topping" },
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 4, Name = "T3", Price = 1.5M, Category ="Topping" }
             };
 
             CustomPizza target = new CustomPizza(fakeitems[0]);
-            var value_store = new Tuple<MenuItem[], CustomPizza>(fakeitems, target);
+            var value_store = new Tuple<PizzaShoppe.Domain.Concrete.MenuItem[], CustomPizza>(fakeitems, target);
             return value_store;
         }
         [TestMethod]

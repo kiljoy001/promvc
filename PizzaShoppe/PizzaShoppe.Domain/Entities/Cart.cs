@@ -48,6 +48,16 @@ namespace PizzaShoppe.Domain.Entities
             lineCollection.Clear();
         }
 
+        public void AddItem(Concrete.MenuItem item, int quantity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveLine(Concrete.MenuItem item)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<CartLine> Lines { get { return lineCollection; } }
         public IEnumerable<CustomPizza> Custom { get { return customPizzas; } }
     }

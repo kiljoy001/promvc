@@ -9,18 +9,18 @@ namespace UnitTests
     [TestClass]
     public class CustomPizzaTest
     {
-        private Tuple<MenuItem[], CustomPizza> Setup_test()
+        private Tuple<PizzaShoppe.Domain.Concrete.MenuItem[], CustomPizza> Setup_test()
         {
-            MenuItem[] fakeitems = new MenuItem[]
+            PizzaShoppe.Domain.Concrete.MenuItem[] fakeitems = new PizzaShoppe.Domain.Concrete.MenuItem[]
             {
-                new MenuItem { ProductID = 1, Name = "C1", Price = 14M, Category = "Crust" },
-                new MenuItem { ProductID = 2, Name = "T1", Price = 1.25M, Category ="Topping" },
-                new MenuItem { ProductID = 3, Name = "T2", Price = 3M, Category ="Topping" },
-                new MenuItem { ProductID = 4, Name = "T3", Price = 1.5M, Category ="Topping" }
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 1, Name = "C1", Price = 14M, Category = "Crust" },
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 2, Name = "T1", Price = 1.25M, Category ="Topping" },
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 3, Name = "T2", Price = 3M, Category ="Topping" },
+                new PizzaShoppe.Domain.Concrete.MenuItem { ProductID = 4, Name = "T3", Price = 1.5M, Category ="Topping" }
             };
 
             CustomPizza target = new CustomPizza(fakeitems[0]);
-            var value_store = new Tuple<MenuItem[], CustomPizza>(fakeitems, target);
+            var value_store = new Tuple<PizzaShoppe.Domain.Concrete.MenuItem[], CustomPizza>(fakeitems, target);
             return value_store;
         }
 

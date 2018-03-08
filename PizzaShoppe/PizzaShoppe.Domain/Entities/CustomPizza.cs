@@ -80,6 +80,16 @@ namespace PizzaShoppe.Domain.Entities
             CrustType = null;
         }
 
+        public void AddItem(Concrete.MenuItem item, int quantity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveLine(Concrete.MenuItem item)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<CartLine> Lines { get { return SelectedToppings; } }
         public MenuItem Crust { get { return CrustType; } }
         public decimal Price { get { return this.ComputeTotalValue(); } }

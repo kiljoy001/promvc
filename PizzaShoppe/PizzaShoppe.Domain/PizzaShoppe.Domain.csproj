@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICart.cs" />
+    <Compile Include="Abstract\IProductRepository.cs" />
     <Compile Include="Concrete\Customer.cs">
       <DependentUpon>PizzaDB.tt</DependentUpon>
     </Compile>
@@ -106,6 +107,7 @@
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\CartLine.cs" />
     <Compile Include="Entities\CustomPizza.cs" />
+    <Compile Include="Entities\MenuItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
