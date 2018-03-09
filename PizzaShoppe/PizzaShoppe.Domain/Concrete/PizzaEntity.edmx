@@ -5,6 +5,16 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="pizzaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin_User">
+          <Key>
+            <PropertyRef Name="adminID" />
+          </Key>
+          <Property Name="email_address" Type="nvarchar" MaxLength="100" />
+          <Property Name="password_hash" Type="nvarchar" MaxLength="60" />
+          <Property Name="created_date" Type="datetime" />
+          <Property Name="last_reset" Type="datetime" />
+          <Property Name="adminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
         <EntityType Name="Customers">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -96,6 +106,7 @@ warning 6002: The table/view 'pizza.dbo.OrderDetails' does not have a primary ke
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="pizzaModelStoreContainer">
+          <EntitySet Name="Admin_User" EntityType="Self.Admin_User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MenuItems" EntityType="Self.MenuItems" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
@@ -127,6 +138,16 @@ warning 6002: The table/view 'pizza.dbo.OrderDetails' does not have a primary ke
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="pizzaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin_User">
+          <Key>
+            <PropertyRef Name="adminID" />
+          </Key>
+          <Property Name="email_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="password_hash" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="created_date" Type="DateTime" Precision="3" />
+          <Property Name="last_reset" Type="DateTime" Precision="3" />
+          <Property Name="adminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -221,7 +242,8 @@ warning 6002: The table/view 'pizza.dbo.OrderDetails' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="pizzaEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin_User" EntityType="Self.Admin_User" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="MenuItems" EntityType="Self.MenuItem" />
           <EntitySet Name="Orders" EntityType="Self.Order" />
@@ -245,7 +267,18 @@ warning 6002: The table/view 'pizza.dbo.OrderDetails' does not have a primary ke
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="pizzaModelStoreContainer" CdmEntityContainer="pizzaEntities1">
+        <EntityContainerMapping StorageEntityContainer="pizzaModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Admin_User">
+            <EntityTypeMapping TypeName="pizzaModel.Admin_User">
+              <MappingFragment StoreEntitySet="Admin_User">
+                <ScalarProperty Name="email_address" ColumnName="email_address" />
+                <ScalarProperty Name="password_hash" ColumnName="password_hash" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="last_reset" ColumnName="last_reset" />
+                <ScalarProperty Name="adminID" ColumnName="adminID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Customers">
             <EntityTypeMapping TypeName="pizzaModel.Customer">
               <MappingFragment StoreEntitySet="Customers">

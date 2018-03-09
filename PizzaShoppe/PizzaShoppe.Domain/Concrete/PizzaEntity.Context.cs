@@ -13,10 +13,10 @@ namespace PizzaShoppe.Domain.Concrete
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class pizzaEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public pizzaEntities()
-            : base("name=pizzaEntities")
+        public Entities()
+            : base("name=Entities")
         {
             this.Database.Connection.ConnectionString = "Data Source=pizzashoppedb.database.windows.net;Initial Catalog=pizza;User ID=PizzaAdmin;Password=t9zHAo3RQ60TYuwGTJ6T";
         }
@@ -26,6 +26,7 @@ namespace PizzaShoppe.Domain.Concrete
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Admin_User> Admin_User { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<MenuItem> MenuItems { get; set; }
         public virtual DbSet<Order> Orders { get; set; }

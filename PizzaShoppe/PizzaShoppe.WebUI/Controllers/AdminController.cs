@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using System.Web.Mvc;
-using PizzaShoppe.Domain.Abstract;
+using PizzaShoppe.Domain.Concrete;
 
 namespace PizzaShoppe.WebUI.Controllers
 {
     public class AdminController : Controller
     {
-        private IProductRepository repository;
-        public AdminController(IProductRepository repo)
+        private Entities Context;
+        public AdminController(Entities context)
         {
-            repository = repo;
+            Context = context;
         }
+
         public ViewResult Index()
         {
-            return View(repository.Products);
+            //Create list to pass to the view
+            List<MenuItem> MList = new List<MenuItem>();
+            //Cycle through the menu items and add them to the list
+            foreach (var item in Context.MenuItems)
+            {
+                MList.Add(item);
+            }
+            return View(MList);
         }
     }
 }

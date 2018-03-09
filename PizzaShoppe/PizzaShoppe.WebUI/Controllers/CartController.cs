@@ -12,9 +12,9 @@ namespace PizzaShoppe.WebUI.Controllers
 {
     public class CartController : Controller
     {
-        private pizzaEntities Context;
+        private Entities Context;
 
-        public CartController(pizzaEntities context)
+        public CartController(Entities context)
         {
             Context = context;
         }

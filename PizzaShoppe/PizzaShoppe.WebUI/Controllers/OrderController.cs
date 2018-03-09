@@ -8,15 +8,15 @@ namespace PizzaShoppe.WebUI.Controllers
     public class OrderController : Controller
     {
         
-        private pizzaEntities _context;
+        private Entities _context;
 
-        public OrderController(pizzaEntities context)
+        public OrderController(Entities context)
         {
             _context = context;
         }
         
         // GET: Order
-        public ActionResult List(pizzaEntities context)
+        public ActionResult List(Entities context)
         {
             //Create list to pass to the view
             List<MenuItem> MList = new List<MenuItem>();

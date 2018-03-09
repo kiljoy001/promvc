@@ -74,35 +74,38 @@
   <ItemGroup>
     <Compile Include="Abstract\ICart.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
+    <Compile Include="Concrete\Admin_User.cs">
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
+    </Compile>
     <Compile Include="Concrete\Customer.cs">
-      <DependentUpon>PizzaDB.tt</DependentUpon>
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Concrete\MenuItem.cs">
-      <DependentUpon>PizzaDB.tt</DependentUpon>
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Concrete\Order.cs">
-      <DependentUpon>PizzaDB.tt</DependentUpon>
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Concrete\OrderDetail.cs">
-      <DependentUpon>PizzaDB.tt</DependentUpon>
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\PizzaDB.Context.cs">
+    <Compile Include="Concrete\PizzaEntity.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaDB.Context.tt</DependentUpon>
+      <DependentUpon>PizzaEntity.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\PizzaDB.cs">
+    <Compile Include="Concrete\PizzaEntity.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaDB.tt</DependentUpon>
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
     </Compile>
-    <Compile Include="Concrete\PizzaDB.Designer.cs">
+    <Compile Include="Concrete\PizzaEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaDB.edmx</DependentUpon>
+      <DependentUpon>PizzaEntity.edmx</DependentUpon>
     </Compile>
     <Compile Include="Concrete\sysdiagram.cs">
-      <DependentUpon>PizzaDB.tt</DependentUpon>
+      <DependentUpon>PizzaEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\CartLine.cs" />
@@ -112,12 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Concrete\PizzaDB.edmx">
+    <EntityDeploy Include="Concrete\PizzaEntity.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PizzaDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>PizzaEntity.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Concrete\PizzaDB.edmx.diagram">
-      <DependentUpon>PizzaDB.edmx</DependentUpon>
+    <None Include="Concrete\PizzaEntity.edmx.diagram">
+      <DependentUpon>PizzaEntity.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -125,18 +128,17 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Concrete\PizzaDB.Context.tt">
+    <Content Include="Concrete\PizzaEntity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PizzaDB.edmx</DependentUpon>
-      <LastGenOutput>PizzaDB.Context.cs</LastGenOutput>
+      <DependentUpon>PizzaEntity.edmx</DependentUpon>
+      <LastGenOutput>PizzaEntity.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Concrete\PizzaDB.tt">
+    <Content Include="Concrete\PizzaEntity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PizzaDB.edmx</DependentUpon>
-      <LastGenOutput>PizzaDB.cs</LastGenOutput>
+      <DependentUpon>PizzaEntity.edmx</DependentUpon>
+      <LastGenOutput>PizzaEntity.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
